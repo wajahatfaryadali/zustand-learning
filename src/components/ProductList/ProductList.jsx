@@ -1,9 +1,12 @@
+import { useCartStore } from "../../store/cartStore"
 import sampleProductsData from "../../utils/sampleData"
 
 const ProductList = () => {
 
+    const addToCart = useCartStore((state) => state.addToCart);
+
     const handleAddToCart = (prod) => {
-        
+        addToCart(prod)
     }
 
     return (

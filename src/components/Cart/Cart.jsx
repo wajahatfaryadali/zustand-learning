@@ -9,18 +9,15 @@ const Cart = () => {
     // }))
 
     const cart = useCartStore(state => state.cart)
-    
-
-    // addToCart
-    // removeFromCart
-    // clearCart
+    const removeFromCart = useCartStore(state => state.removeFromCart)
+    const clearCart = useCartStore(state => state.clearCart)
 
     const handleRemoveFromCart = (prodID) => {
-
+        removeFromCart(prodID)
     }
 
     const handleEmptyCart = () => {
-
+        clearCart()
     }
 
     console.log(cart)
