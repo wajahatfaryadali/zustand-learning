@@ -1,0 +1,14 @@
+.span {
+    font-size: .75rem;
+}
+
+.hr {
+    width: 50%;
+}
+
+.button {
+    font-size: .75rem;
+    border: 1px solid gray;
+    margin-left: 0.5rem;
+    padding: 0.25rem;
+}
