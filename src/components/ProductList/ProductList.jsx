@@ -1,10 +1,9 @@
 import sampleProductsData from "../../utils/sampleData"
 
-const ProductList = (props) => {
-    const { setCart } = props;
+const ProductList = () => {
 
     const handleAddToCart = (prod) => {
-        setCart((prevCart) => [...prevCart, prod])
+        
     }
 
     return (

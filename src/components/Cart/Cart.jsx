@@ -1,17 +1,32 @@
 import classes from "./index.module.css"
+import { useCartStore } from "../../store/cartStore"
 
-const Cart = ({ cart, setCart }) => {
+const Cart = () => {
+
+    // not working causing infinite rendering 
+    // const { cart } = useCartStore((state) => ({
+    //     cart: state.cart,
+    // }))
+
+    const cart = useCartStore(state => state.cart)
+    
+
+    // addToCart
+    // removeFromCart
+    // clearCart
 
     const handleRemoveFromCart = (prodID) => {
-        setCart(() => cart.filter(product => product.id !== prodID))
+
     }
 
     const handleEmptyCart = () => {
-        setCart([])
+
     }
+
+    console.log(cart)
     return (
         <div>
-            {cart.map(prod => (
+            {cart?.map(prod => (
                 <div key={prod.id}>
                     <span className={classes.span}>{prod.name}</span>
                     <button onClick={() => handleRemoveFromCart(prod.id)} className={classes.button}>remove</button>
