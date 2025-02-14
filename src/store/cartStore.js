@@ -41,16 +41,19 @@ const initialState = {
 
 export const useUserStore = create((set) => ({
     ...initialState,
-    updateUserStreetAddress: (street) => set((state) => ({
-        user: {
-            ...state.user,
-            profile: {
-                ...state.user.profile,
-                address: {
-                    ...state.user.profile.address,
-                    street: street
-                }
-            }
-        }
+    // updateUserStreetAddress: (street) => set((state) => ({
+    //     user: {
+    //         ...state.user,
+    //         profile: {
+    //             ...state.user.profile,
+    //             address: {
+    //                 ...state.user.profile.address,
+    //                 street: street
+    //             }
+    //         }
+    //     }
+    // }))
+    updateUserStreetAddress: (street) => set(produce((state) => {
+        state.user.profile.address.street = street
     }))
 }))
